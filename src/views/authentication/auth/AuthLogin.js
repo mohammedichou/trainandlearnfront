@@ -12,13 +12,22 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import CustomTextField from '../../../components/forms/theme-elements/CustomTextField';
+import { ConstructionOutlined } from '@mui/icons-material';
 //import { Login } from '@mui/icons-material';
 
-
-const loggin = () => {
-    fetch('https://devtrainlearnapi.herokuapp.com/api')
-    .then(response => response.json())
-    .then(data => console.log(data));
+const loggin = async () =>  {
+    const response = await fetch(
+        //'http://127.0.0.1:5500/api',
+        'https://devtrainlearnapi.herokuapp.com/api',
+        {
+            method: 'get',
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        }
+    );
+    const test = await response.text();
+    console.log(test);
 }
 
 const AuthLogin = ({ title, subtitle, subtext }) => (
