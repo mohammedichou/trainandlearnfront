@@ -18,8 +18,8 @@ import { ConstructionOutlined } from '@mui/icons-material';
 
 const loggin = async () =>  {
     let email = document.getElementById('username')
-
-    console.log(email);
+    let pass = document.getElementById('password')
+    console.log("email" + email.value);
 
     const response = await fetch(
  
@@ -30,7 +30,7 @@ const loggin = async () =>  {
             headers: {
                 "Content-type": "application/json; charset=UTF-8"
             },body : JSON.stringify({
-                "emailAdress":"president@gmail.com",
+                "emailAdress":email.value,
                 "password":"testtest"
             })
         }
