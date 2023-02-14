@@ -8,26 +8,43 @@ import {
     Stack,
     Checkbox
 } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, redirect, Route } from 'react-router-dom';
 import axios from 'axios';
 
 import CustomTextField from '../../../components/forms/theme-elements/CustomTextField';
 import { ConstructionOutlined } from '@mui/icons-material';
+
 //import { Login } from '@mui/icons-material';
 
 const loggin = async () =>  {
+    let email = document.getElementById('username')
+
+    console.log(email);
+
     const response = await fetch(
+ 
         //'http://127.0.0.1:5500/api',
-        'https://devtrainlearnapi.herokuapp.com/api',
+        'https://devtrainlearnapi.herokuapp.com/api/login',
         {
-            method: 'get',
+            method: 'post',
             headers: {
                 "Content-type": "application/json; charset=UTF-8"
-            }
+            },body : JSON.stringify({
+                "emailAdress":"president@gmail.com",
+                "password":"testtest"
+            })
         }
-    );
-    const test = await response.text();
-    console.log(test);
+    ).then((responseJson) => {
+    // console.log(responseJson);
+        console.log(responseJson.json)
+        return redirect("/");
+    
+   })
+   .catch((error) => {
+     console.error(error);
+   });
+    //const test = await response.text();
+    //console.log(test);
 }
 
 const AuthLogin = ({ title, subtitle, subtext }) => (
@@ -79,7 +96,7 @@ const AuthLogin = ({ title, subtitle, subtext }) => (
                 size="large"
                 fullWidth
                 component={Link}
-                //to="/"
+                to="/"
                 type="submit"
             >
                 Connexion   
