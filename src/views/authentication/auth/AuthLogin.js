@@ -8,18 +8,17 @@ import {
     Stack,
     Checkbox
 } from '@mui/material';
-import { Link, redirect, Route } from 'react-router-dom';
+import { Link, redirect, Route, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import CustomTextField from '../../../components/forms/theme-elements/CustomTextField';
-import { ConstructionOutlined } from '@mui/icons-material';
+import { ConstructionOutlined, Dashboard } from '@mui/icons-material';
 
 //import { Login } from '@mui/icons-material';
 
 const loggin = async () =>  {
     let email = document.getElementById('username')
     let pass = document.getElementById('password')
-    console.log("email" + email.value);
 
     const response = await fetch(
  
@@ -31,13 +30,17 @@ const loggin = async () =>  {
                 "Content-type": "application/json; charset=UTF-8"
             },body : JSON.stringify({
                 "emailAdress":email.value,
-                "password":"testtest"
+                "password":pass.value
             })
         }
     ).then((responseJson) => {
     // console.log(responseJson);
-        console.log(responseJson.json)
-        return redirect("/");
+        console.log(responseJson.status)
+        if(responseJson.status == 200){
+            window.location.href = "http://localhost:3000/";
+        }
+        //
+
     
    })
    .catch((error) => {
@@ -96,7 +99,7 @@ const AuthLogin = ({ title, subtitle, subtext }) => (
                 size="large"
                 fullWidth
                 component={Link}
-                to="/"
+                //to="/"
                 type="submit"
             >
                 Connexion   
