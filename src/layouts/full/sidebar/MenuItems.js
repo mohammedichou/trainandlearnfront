@@ -1,5 +1,6 @@
 import {
-  IconAperture, IconCopy, IconLayoutDashboard, IconLogin, IconMoodHappy, IconTypography, IconUserPlus
+  Icon123,
+  IconAperture, IconCopy, IconEye, IconFile, IconLayoutDashboard, IconLogin, IconMoodHappy, IconTypography, IconUserPlus
 } from '@tabler/icons';
 
 import { uniqueId } from 'lodash';
@@ -24,9 +25,39 @@ const Menuitems = [
   },  
   {
     id: uniqueId(),
+    title: 'Session',
+    icon: IconMoodHappy,
+    href: '',
+  },
+  {
+    id: uniqueId(),
+    title: 'Dossiers',
+    icon: IconFile,
+    href: '/dossier',
+  }, 
+  {
+    id: uniqueId(),
+    title: 'Vieil et report',
+    icon: IconEye,
+    href: '',
+  }, 
+  {
+    id: uniqueId(),
     title: 'Formation',
     icon: IconTypography,
     href: '/formation',
+  },
+  {
+    id: uniqueId(),
+    title: 'Mes modèles',
+    icon: IconAperture,
+    href: '',
+  },
+  {
+    id: uniqueId(),
+    title: 'Provenance',
+    icon: IconCopy,
+    href: '',
   },
   {
     navlabel: true,
