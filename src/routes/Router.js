@@ -29,6 +29,14 @@ const Router = [
       { path: '/ui/shadow', exact: true, element: <Shadow /> },
       { path: '*', element: <Navigate to="/auth/404" /> },
     ],
+  },{
+
+    path:'/seeting',
+    element : <FullLayout />,
+    children:[
+    ]
+
+
   },
   {
     path: '/auth',
@@ -40,6 +48,7 @@ const Router = [
       { path: '*', element: <Navigate to="/auth/404" /> },
     ],
   },
+  
 ];
 
 export default Router;

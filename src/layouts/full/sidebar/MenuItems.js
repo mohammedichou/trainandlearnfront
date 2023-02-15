@@ -18,6 +18,16 @@ const Menuitems = [
   },
   {
     navlabel: true,
+    subheader: 'Régalge',
+  },
+  {
+    id: uniqueId(),
+    title: 'Réglage',
+    icon: IconTypography,
+    href: '/seeting',
+  },
+  {
+    navlabel: true,
     subheader: 'Auth',
   },
   {
