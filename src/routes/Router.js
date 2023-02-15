@@ -1,5 +1,6 @@
 import React, { lazy } from 'react';
 import { Navigate } from 'react-router-dom';
+import Seeting from 'src/views/seeting/Seeting';
 import Loadable from '../layouts/full/shared/loadable/Loadable';
 
 /* ***Layouts**** */
@@ -34,6 +35,7 @@ const Router = [
     path:'/seeting',
     element : <FullLayout />,
     children:[
+      { path: '/seeting', exact: true, element: <Seeting /> },
     ]
 
 
