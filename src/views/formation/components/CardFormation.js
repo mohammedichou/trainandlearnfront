@@ -3,7 +3,8 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
+import Button from '@mui/material/Button'
+import { Grid } from '@mui/material';
 import Typography from '@mui/material/Typography';
 
 const bull = (
@@ -20,22 +21,69 @@ export default function CardFormatio() {
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          Word of the Day
+          Wordpress
         </Typography>
         <Typography variant="h5" component="div">
-          be{bull}nev{bull}o{bull}lent
-        </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          adjective
-        </Typography>
-        <Typography variant="body2">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
-        </Typography>
+        {bull}
+        </Typography >
+        <Grid sx={12} container spacing={1} sx={{marginTop : 1}}>
+            <Grid item xs={6}>
+                <Typography variant="body2">
+                    Theme : 
+                </Typography>
+            </Grid>
+                
+            <Grid item xs={6}>
+                <Typography variant="body2">
+                    Format
+                </Typography>
+            </Grid>
+        </Grid>
+
+        <Grid sx={12} container spacing={1} sx={{marginTop : 1}}>
+            <Grid item xs={6}>
+                <Typography variant="body2">
+                    Web : 
+                </Typography>
+            </Grid>
+                
+            <Grid item xs={6}>
+                <Typography variant="body2">
+                    E-learning
+                </Typography>
+            </Grid>
+        </Grid>
+
+        <Grid sx={12} container spacing={1} sx={{marginTop : 1}}>
+            <Grid item xs={6}>
+                <Typography variant="body2">
+                    tarif : 
+                </Typography>
+            </Grid>
+                
+            <Grid item xs={6}>
+                <Typography variant="body2">
+                    Derniere modification
+                </Typography>
+            </Grid>
+        </Grid>
+
+        <Grid sx={12} container spacing={1} sx={{marginTop : 1}}>
+            <Grid item xs={6}>
+                <Typography variant="body2">
+                    1000 € 
+                </Typography>
+            </Grid>
+                
+            <Grid item xs={6}>
+                <Typography variant="body2">
+                    14/02/2023
+                </Typography>
+            </Grid>
+        </Grid>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button size="big">Afficher</Button>
       </CardActions>
     </Card>
   );
