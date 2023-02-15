@@ -17,14 +17,16 @@ const Menuitems = [
     href: '/dashboard',
   },
   {
-    navlabel: true,
-    subheader: 'Régalge',
-  },
-  {
     id: uniqueId(),
     title: 'Réglage',
     icon: IconTypography,
     href: '/seeting',
+  },  
+  {
+    id: uniqueId(),
+    title: 'Formation',
+    icon: IconTypography,
+    href: '/formation',
   },
   {
     navlabel: true,

@@ -20,7 +20,34 @@ const loggin = async () =>  {
     let email = document.getElementById('username')
     let pass = document.getElementById('password')
 
-    const response = await fetch(
+
+    const data = {
+        "emailAdress":email.value,
+        "password":pass.value
+    }
+    const headers = {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin" : "*",
+        "withCredentials":false
+        
+    };
+    axios
+      .post("https://devtrainlearnapi.herokuapp.com/api/login",data, {
+        headers: headers
+    })
+      .then((res) => {
+        console.log("success full" + JSON.stringify(res))
+
+        const token  =  "test";
+        localStorage.setItem("token", token);
+        if (res.status == 200){
+            window.location.href = "http://localhost:3000/";
+            
+        }
+      })
+
+    /*const response = await fetch(
  
         //'http://127.0.0.1:5500/api',
         'https://devtrainlearnapi.herokuapp.com/api/login',
@@ -35,19 +62,16 @@ const loggin = async () =>  {
         }
     ).then((responseJson) => {
     // console.log(responseJson);
-        console.log(responseJson.status)
+        console.log(responseJson.json.data)
         if(responseJson.status == 200){
-            window.location.href = "http://localhost:3000/";
+            //window.location.href = "http://localhost:3000/";
+            
         }
-        //
 
-    
    })
    .catch((error) => {
      console.error(error);
-   });
-    //const test = await response.text();
-    //console.log(test);
+   });*/
 }
 
 const AuthLogin = ({ title, subtitle, subtext }) => (

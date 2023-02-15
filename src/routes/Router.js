@@ -1,6 +1,7 @@
 import React, { lazy } from 'react';
 import { Navigate } from 'react-router-dom';
 import Seeting from 'src/views/seeting/Seeting';
+import Formation from 'src/views/formation/Formation'
 import Loadable from '../layouts/full/shared/loadable/Loadable';
 
 /* ***Layouts**** */
@@ -35,7 +36,20 @@ const Router = [
     path:'/seeting',
     element : <FullLayout />,
     children:[
-      { path: '/seeting', exact: true, element: <Seeting /> },
+      { 
+        path: '/seeting', exact: true, element: <Seeting />
+       },
+    ]
+
+
+  },{
+
+    path:'/formation',
+    element : <FullLayout />,
+    children:[
+      { 
+        path: '/formation', exact: true, element: <Formation />
+       },
     ]
 
 

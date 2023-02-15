@@ -2,10 +2,21 @@ import React from 'react';
 import { Grid, Box, Card, Typography, CardContent } from '@mui/material';
 import PageContainer from 'src/components/container/PageContainer';
 import CustomTextField from 'src/components/forms/theme-elements/CustomTextField';
+import axios from 'axios';
 // components
 
 
 const Seeting = () => {
+
+    const [data, setData] = React.useState([])
+    const token = localStorage.getItem("token");
+    console.log(token)
+    axios
+      .get("https://devtrainlearnapi.herokuapp.com/api")
+      .then((res) => {
+        console.log("success full" + res)
+      })
+
   return (
     <PageContainer title="Seeting" description="this is Seeting">
     <div style={{margin: '1%'}}>
@@ -61,6 +72,16 @@ const Seeting = () => {
         </Grid>
 
       </CardContent>
+
+    </Card>
+    </div>
+    <div style={{margin: '1%'}}>
+    <Card>
+       <CardContent>
+            <Typography variant='h3'  gutterBottom>
+                Banque
+            </Typography>
+        </CardContent> 
     </Card>
     </div>
     </PageContainer>
