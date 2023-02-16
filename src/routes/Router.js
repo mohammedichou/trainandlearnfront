@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 import Seeting from 'src/views/seeting/Seeting';
 import Formation from 'src/views/formation/Formation'
 import Loadable from '../layouts/full/shared/loadable/Loadable';
-import Dossiers from 'src/views/Dossiers/Dossiers';
+import Dossier from 'src/views/Dossier/Dossier';
 
 /* ***Layouts**** */
 const FullLayout = Loadable(lazy(() => import('../layouts/full/FullLayout')));
@@ -49,7 +49,7 @@ const Router = [
     element : <FullLayout />,
     children:[
       { 
-        path: '/dossier', exact: true, element: <Dossiers />
+        path: '/dossier', exact: true, element: <Dossier />
        },
     ]
 

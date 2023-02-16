@@ -16,7 +16,7 @@ const bull = (
   </Box>
 );
 
-export default function CardFormatio() {
+export default function CardFormation() {
   return (
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
@@ -77,7 +77,7 @@ export default function CardFormatio() {
                 
             <Grid item xs={6}>
                 <Typography variant="body2">
-                    14/02/2023
+                    13.02.2023
                 </Typography>
             </Grid>
         </Grid>
