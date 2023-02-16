@@ -1,6 +1,6 @@
 import {
   Icon123,
-  IconAperture, IconCopy, IconEye, IconFile, IconLayoutDashboard, IconLogin, IconMoodHappy, IconTypography, IconUserPlus
+  IconAperture, IconCopy, IconEye, IconFile, IconHome, IconLayoutDashboard, IconLogin, IconMoodHappy, IconTypography, IconUserPlus
 } from '@tabler/icons';
 
 import { uniqueId } from 'lodash';
@@ -31,7 +31,7 @@ const Menuitems = [
   },
   {
     id: uniqueId(),
-    title: 'Dossiers',
+    title: 'Dossier',
     icon: IconFile,
     href: '/dossier',
   }, 
@@ -46,6 +46,12 @@ const Menuitems = [
     title: 'Formation',
     icon: IconTypography,
     href: '/formation',
+  },
+  {
+    id: uniqueId(),
+    title: 'Centre',
+    icon: IconHome,
+    href: '/centre',
   },
   {
     id: uniqueId(),

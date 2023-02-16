@@ -4,6 +4,7 @@ import Seeting from 'src/views/seeting/Seeting';
 import Formation from 'src/views/formation/Formation'
 import Loadable from '../layouts/full/shared/loadable/Loadable';
 import Dossier from 'src/views/Dossier/Dossier';
+import Centre from 'src/views/Centre/Centre';
 
 /* ***Layouts**** */
 const FullLayout = Loadable(lazy(() => import('../layouts/full/FullLayout')));
@@ -52,8 +53,6 @@ const Router = [
         path: '/dossier', exact: true, element: <Dossier />
        },
     ]
-
-
   },{
 
     path:'/formation',
@@ -61,6 +60,17 @@ const Router = [
     children:[
       { 
         path: '/formation', exact: true, element: <Formation />
+       },
+    ]
+
+
+  },{
+
+    path:'/centre',
+    element : <FullLayout />,
+    children:[
+      { 
+        path: '/centre', exact: true, element: <Centre />
        },
     ]
 

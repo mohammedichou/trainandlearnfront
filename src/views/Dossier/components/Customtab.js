@@ -5,15 +5,15 @@ import { randomStatusOptions, randomPrice, randomCommodity } from '@mui/x-data-g
 
 const rows = [
   {
-    id: 1,
+    id: "1234557",
     Client: "Mohammed ichou",
-    Telephone: randomPrice(),
-    Provenance: randomPrice(),
-    statutduprospect : randomCommodity(),
-    statut : randomCommodity(),
-    intitulé : randomCommodity(),
-    entrée : randomCommodity(),
-    sortie : randomCommodity(),
+    Telephone: "0770636099",
+    Provenance: "call center",
+    statutduprospect : "Dossier OK",
+    statut : "entrée a faire",
+    intitulé : "wordpress",
+    entrée : "13.12.2023",
+    sortie : "13.12.2023",
     tarif : randomPrice(),
     observatoire : "",
   },
@@ -58,9 +58,9 @@ export default function Customtab() {
     <div style={{ height: 300, width: '100%' }} className={classes.root}>
       <DataGrid
         columns={[
-          { field: 'ID', width: 130 },
-          { field: 'Client', width: 130},
-          { field: 'Telephone', ...usdPrice },
+          { field: 'ID',type : 'string' ,width: 130 },
+          { field: 'Client', type: 'string', width : 100},
+          { field: 'Telephone', type: 'number' },
           { field: 'Provenance', ...usdPrice },
           { field: 'statut du prospect', ...usdPrice },
           { field: 'statut', ...usdPrice },
