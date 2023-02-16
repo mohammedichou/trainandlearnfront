@@ -58,7 +58,7 @@ const Dossier = () => {
       <Grid container  spacing = {1}  >
       </Grid>
       </Box>
-      <Box>
+      <Box style = {{marginTop : "25px"}}>
         <Customtab></Customtab>
       </Box>
     </PageContainer>
